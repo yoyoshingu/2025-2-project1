@@ -35,4 +35,4 @@ function getweather(){
     });
 }
 
-getweather()
+// getweather()

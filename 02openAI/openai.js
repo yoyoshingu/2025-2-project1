@@ -1,4 +1,3 @@
-key = "sk-XgBNm5RNrEz0GLw0DLK_FlU7vgTOhEoe7BDcjaCjVKT3BlbkFJXRwkQLiDqE8p9_zQOv5RzAPYAEbcQVmvTDurHZxRgA"
 
 function talk(){
     // alert("getWeather 가 수행됨됨")

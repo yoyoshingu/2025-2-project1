@@ -24,8 +24,7 @@ function talk(){
         url: "https://api.openai.com/v1/chat/completions",
         headers: {
                 "Content-Type": "application/json",  
-                "Authorization": "Bearer " 
-                },
+                "Authorization": "Bearer "
         data: JSON.stringify(talkdata),
                         
 
@@ -42,4 +41,46 @@ function talk(){
         txtMsg.value = "실패 \n\n" + error.responseText
     });
 }
+
+
+
+function draw(){
+    alert("draw 가 수행됨됨")
+
+    userquestion = txtcity.value
+    if (userquestion == ""){
+        userquestion = "smoking tiger"
+    }
+    txtMsg.value = "그리는중입니다 "
+    talkdata = {
+        "prompt": userquestion,
+        "n" : 2,
+        "size" : "512x512"
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "https://api.openai.com/v1/images/generations",
+        headers: {
+                "Content-Type": "application/json",  
+                "Authorization": "Bearer "
+                },
+        data: JSON.stringify(talkdata),
+                        
+
+    }).done(function(response){
+      
+        console.log(response)
+        txtMsg.value = "성공\n\n" 
+        aiimage.src = response.data[0].url
+        aiimage2.src = response.data[1].url
+ 
+
+    }).fail(function(error){
+        console.log(error)
+        txtMsg.value = "실패 \n\n" +
+            error.responseJSON.error.message
+    });
+}
+
 

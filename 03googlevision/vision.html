@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구글 비젼 체험 사이트트</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+    .fakeimg {
+        height: 200px;
+        background: #aaa;
+    }
+    </style>    
+  
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script defer src="vision.js"></script>
+
+</head>
+<body>
+    
+    <div class="p-5 bg-primary text-white text-center">
+    <h1> 구글 비젼 - 이용희 제작 </h1>
+    </div>
+
+    <input type="file" onchange="uploadFiles(this.files)">
+    <input type="button" onclick="analyze()" value="이미지분석">
+    <img id="gimage" style="border:5px solid #555">
+
+    <hr>
+    <textarea id="result" cols="30" rows="10"></textarea>
+
+
+  
+
+</body>
+</html>

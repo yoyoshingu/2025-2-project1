@@ -25,7 +25,8 @@ function talk(){
         headers: {
                 "Content-Type": "application/json",  
                 "Authorization": "Bearer "
-        data: JSON.stringify(talkdata),
+        },
+        data: JSON.stringify(talkdata)
                         
 
     }).done(function(response){

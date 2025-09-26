@@ -1,5 +1,17 @@
-function uploadfiles(files){
+function processFile(event){
+    content = event.target.result;
+    imagestring = content.replace('data:image/jpeg;base64,', '');
+    gimage.src = content
+}
 
+
+
+function uploadFiles(files){
+    file = files[0]
+    reader = new FileReader()
+    reader.onloadend = processFile
+
+    reader.readAsDataURL(file);
 }
 
 
@@ -7,7 +19,8 @@ var googleAPIKey = ""
 function analyze(){
 
     reqestData = 
-
+    // 요구하는 데이터를 JSON형식으로 지정
+    // https://cloud.google.com/vision/docs/detecting-faces?hl=ko#vision_face_detection-drest
 
     $.ajax({
         type: "POST",
@@ -26,7 +39,7 @@ function analyze(){
     .fail(function(error){
 
         console.log(error)
-        result.value = "실패 \n\n" +
+        result.value = "실패 \n\n" 
         
     });
 

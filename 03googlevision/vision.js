@@ -57,8 +57,10 @@ function analyze(){
     .fail(function(error){
 
         console.log(error)
-        result.value = "실패 \n\n" 
+        result.value = "실패 \n\n" + 
+            error.responseJSON.error.message
         
     });
 
 }
+
